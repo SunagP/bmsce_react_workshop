@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleVibe - Fashion Store</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/70 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-8">
+                    <h1 class="text-3xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent">
+                        StyleVibe
+                    </h1>
+                    <div class="hidden md:flex gap-6">
+                        <a href="#" class="hover:text-pink-500 transition-colors">Men</a>
+                        <a href="#" class="hover:text-purple-500 transition-colors">Women</a>
+                        <a href="#" class="hover:text-cyan-500 transition-colors">Sale</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="hover:scale-110 transition-transform">🔍</button>
+                    <button class="hover:scale-110 transition-transform">❤️</button>
+                    <button class="relative hover:scale-110 transition-transform">
+                        🛒
+                        <span class="absolute -top-2 -right-2 bg-pink-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">3</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-pink-500/20 via-purple-500/20 to-cyan-500/20"></div>
+        <div class="absolute inset-0" style="background-image: url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1600'); background-size: cover; background-position: center; opacity: 0.3;"></div>
+        
+        <div class="relative z-10 text-center px-4">
+            <h2 class="text-7xl md:text-9xl font-black mb-6 float-animation">
+                <span class="bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent">
+                    FASHION
+                </span>
+            </h2>
+            <p class="text-2xl md:text-3xl text-gray-300 mb-8">Unleash Your Style, Redefine Your Vibe</p>
+            <button class="group relative px-12 py-4 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-full font-bold text-xl overflow-hidden">
+                <span class="relative z-10">Shop Now</span>
+                <div class="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+            </button>
+        </div>
+    </section>
+
+    <!-- Trending Banner -->
+    <div class="bg-gradient-to-r from-pink-600 via-purple-600 to-cyan-600 py-3">
+        <p class="text-center font-bold text-lg animate-pulse">🔥 WINTER SALE: UP TO 70% OFF - LIMITED TIME ONLY! 🔥</p>
+    </div>
+
+    <!-- Men's Collection -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="flex items-center justify-between mb-12">
+            <h3 class="text-5xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+                Men's Collection
+            </h3>
+            <button class="text-cyan-500 hover:text-cyan-400 flex items-center gap-2 group">
+                View All 
+                <span class="group-hover:translate-x-2 transition-transform">→</span>
+            </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <!-- Men Product 1 -->
+            <div class="group relative bg-zinc-900 rounded-3xl overflow-hidden hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/50">
+                <div class="aspect-[3/4] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=500" 
+                         alt="Men's Jacket" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="absolute top-4 right-4 bg-red-500 text-white px-4 py-2 rounded-full font-bold text-sm animate-pulse">
+                    -40%
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <button class="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2">
+                        Add to Cart 🛒
+                    </button>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-bold mb-2">Premium Winter Jacket</h4>
+                    <p class="text-gray-400 text-sm mb-3">Waterproof & Windproof</p>
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl font-bold text-cyan-500">$89.99</span>
+                        <span class="text-gray-500 line-through">$149.99</span>
+                    </div>
+                    <div class="flex items-center gap-1 mt-2">
+                        <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                        <span class="text-sm text-gray-400">(124)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Men Product 2 -->
+            <div class="group relative bg-zinc-900 rounded-3xl overflow-hidden hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/50">
+                <div class="aspect-[3/4] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500" 
+                         alt="Casual Shirt" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full font-bold text-sm">
+                    NEW
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <button class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2">
+                        Add to Cart 🛒
+                    </button>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-bold mb-2">Casual Denim Shirt</h4>
+                    <p class="text-gray-400 text-sm mb-3">100% Cotton Comfort</p>
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl font-bold text-blue-500">$49.99</span>
+                    </div>
+                    <div class="flex items-center gap-1 mt-2">
+                        <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                        <span class="text-sm text-gray-400">(89)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Men Product 3 -->
+            <div class="group relative bg-zinc-900 rounded-3xl overflow-hidden hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/50">
+                <div class="aspect-[3/4] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=500" 
+                         alt="Sneakers" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="absolute top-4 right-4 bg-purple-500 text-white px-4 py-2 rounded-full font-bold text-sm">
+                    HOT 🔥
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <button class="w-full bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2">
+                        Add to Cart 🛒
+                    </button>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-bold mb-2">Sport Sneakers</h4>
+                    <p class="text-gray-400 text-sm mb-3">Ultra Boost Technology</p>
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl font-bold text-purple-500">$129.99</span>
+                        <span class="text-gray-500 line-through">$179.99</span>
+                    </div>
+                    <div class="flex items-center gap-1 mt-2">
+                        <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                        <span class="text-sm text-gray-400">(256)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Men Product 4 -->
+            <div class="group relative bg-zinc-900 rounded-3xl overflow-hidden hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/50">
+                <div class="aspect-[3/4] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1623874514711-0f321325f318?w=500" 
+                         alt="Formal Blazer" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <button class="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2">
+                        Add to Cart 🛒
+                    </button>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-bold mb-2">Formal Blazer</h4>
+                    <p class="text-gray-400 text-sm mb-3">Premium Wool Blend</p>
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl font-bold text-cyan-500">$199.99</span>
+                    </div>
+                    <div class="flex items-center gap-1 mt-2">
+                        <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                        <span class="text-sm text-gray-400">(78)</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Women's Collection -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="flex items-center justify-between mb-12">
+            <h3 class="text-5xl font-bold bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent">
+                Women's Collection
+            </h3>
+            <button class="text-pink-500 hover:text-pink-400 flex items-center gap-2 group">
+                View All 
+                <span class="group-hover:translate-x-2 transition-transform">→</span>
+            </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <!-- Women Product 1 -->
+            <div class="group relative bg-zinc-900 rounded-3xl overflow-hidden hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-pink-500/50">
+                <div class="aspect-[3/4] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500" 
+                         alt="Summer Dress" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="absolute top-4 right-4 bg-pink-500 text-white px-4 py-2 rounded-full font-bold text-sm animate-pulse">
+                    -50%
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <button class="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2">
+                        Add to Cart 🛒
+                    </button>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-bold mb-2">Elegant Summer Dress</h4>
+                    <p class="text-gray-400 text-sm mb-3">Floral Print Collection</p>
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl font-bold text-pink-500">$59.99</span>
+                        <span class="text-gray-500 line-through">$119.99</span>
+                    </div>
+                    <div class="flex items-center gap-1 mt-2">
+                        <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                        <span class="text-sm text-gray-400">(342)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Women Product 2 -->
+            <div class="group relative bg-zinc-900 rounded-3xl overflow-hidden hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-rose-500/50">
+                <div class="aspect-[3/4] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=500" 
+                         alt="Leather Jacket" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="absolute top-4 right-4 bg-black text-white px-4 py-2 rounded-full font-bold text-sm border border-white">
+                    ⚡ BEST SELLER
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <button class="w-full bg-rose-500 hover:bg-rose-600 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2">
+                        Add to Cart 🛒
+                    </button>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-bold mb-2">Leather Biker Jacket</h4>
+                    <p class="text-gray-400 text-sm mb-3">Genuine Leather</p>
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl font-bold text-rose-500">$249.99</span>
+                    </div>
+                    <div class="flex items-center gap-1 mt-2">
+                        <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                        <span class="text-sm text-gray-400">(567)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Women Product 3 -->
+            <div class="group relative bg-zinc-900 rounded-3xl overflow-hidden hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/50">
+                <div class="aspect-[3/4] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500" 
+                         alt="High Heels" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="absolute top-4 right-4 bg-purple-500 text-white px-4 py-2 rounded-full font-bold text-sm">
+                    NEW ✨
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <button class="w-full bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2">
+                        Add to Cart 🛒
+                    </button>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-bold mb-2">Designer High Heels</h4>
+                    <p class="text-gray-400 text-sm mb-3">Luxury Collection</p>
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl font-bold text-purple-500">$159.99</span>
+                    </div>
+                    <div class="flex items-center gap-1 mt-2">
+                        <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                        <span class="text-sm text-gray-400">(198)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Women Product 4 -->
+            <div class="group relative bg-zinc-900 rounded-3xl overflow-hidden hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-pink-500/50">
+                <div class="aspect-[3/4] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=500" 
+                         alt="Handbag" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="absolute top-4 right-4 bg-yellow-500 text-black px-4 py-2 rounded-full font-bold text-sm">
+                    💎 LUXURY
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <button class="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2">
+                        Add to Cart 🛒
+                    </button>
+                </div>
+                <div class="p-6">
+                    <h4 class="text-xl font-bold mb-2">Designer Handbag</h4>
+                    <p class="text-gray-400 text-sm mb-3">Italian Leather</p>
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl font-bold text-pink-500">$399.99</span>
+                    </div>
+                    <div class="flex items-center gap-1 mt-2">
+                        <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                        <span class="text-sm text-gray-400">(423)</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="bg-gradient-to-br from-pink-500/20 to-transparent border border-pink-500/30 rounded-2xl p-6 hover:scale-105 transition-transform">
+                <div class="text-4xl mb-4">🚚</div>
+                <h4 class="font-bold text-xl mb-2">Free Shipping</h4>
+                <p class="text-gray-400 text-sm">On orders over $50</p>
+            </div>
+            <div class="bg-gradient-to-br from-purple-500/20 to-transparent border border-purple-500/30 rounded-2xl p-6 hover:scale-105 transition-transform">
+                <div class="text-4xl mb-4">↩️</div>
+                <h4 class="font-bold text-xl mb-2">Easy Returns</h4>
+                <p class="text-gray-400 text-sm">30-day return policy</p>
+            </div>
+            <div class="bg-gradient-to-br from-cyan-500/20 to-transparent border border-cyan-500/30 rounded-2xl p-6 hover:scale-105 transition-transform">
+                <div class="text-4xl mb-4">🔒</div>
+                <h4 class="font-bold text-xl mb-2">Secure Payment</h4>
+                <p class="text-gray-400 text-sm">100% secure checkout</p>
+            </div>
+            <div class="bg-gradient-to-br from-blue-500/20 to-transparent border border-blue-500/30 rounded-2xl p-6 hover:scale-105 transition-transform">
+                <div class="text-4xl mb-4">💎</div>
+                <h4 class="font-bold text-xl mb-2">Premium Quality</h4>
+                <p class="text-gray-400 text-sm">Handpicked collections</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="bg-gradient-to-r from-pink-600 via-purple-600 to-cyan-600 rounded-3xl p-12 text-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-black/20"></div>
+            <div class="relative z-10">
+                <h3 class="text-4xl font-bold mb-4">Get 20% Off Your First Order! 🎉</h3>
+                <p class="text-lg mb-8">Subscribe to our newsletter and stay updated with latest trends</p>
+                <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                    <input type="email" placeholder="Enter your email" class="flex-1 px-6 py-4 rounded-full text-black font-semibold focus:outline-none focus:ring-4 focus:ring-white/50">
+                    <button class="bg-black text-white px-8 py-4 rounded-full font-bold hover:bg-gray-900 transition-colors">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent mb-4">StyleVibe</h4>
+                    <p class="text-gray-400">Your destination for the latest fashion trends.</p>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4">Shop</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Men's Fashion</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Women's Fashion</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Accessories</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Sale</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4">Support</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">FAQs</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Shipping Info</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Returns</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4">Follow Us</h5>
+                    <div class="flex gap-4">
+                        <button class="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform">📘</button>
+                        <button class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform">📷</button>
+                        <button class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform">🐦</button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-gray-400 pt-8 border-t border-white/10">
+                <p>© 2025 StyleVibe. Built with ❤️ using Tailwind CSS - No custom CSS!</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

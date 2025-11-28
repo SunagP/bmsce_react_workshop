@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Cascading Demo</title>
+    
+    <!-- External CSS - Lowest Priority -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        /* Demo 1: When two rules have same specificity, last one wins */
+        .demo1 {
+            color: green;
+        }
+        .demo1 {
+            color: orange;
+        }
+
+        /* Demo 2: Different selector types have different priorities */
+        p {
+            color: blue;
+            font-size: 16px;
+        }
+        
+        .highlight {
+            color: purple;
+            font-weight: bold;
+        }
+        
+        #special {
+            color: red;
+            text-decoration: underline;
+        }
+
+        /* Demo 3: Combining selectors */
+        .box p {
+            color: brown;
+        }
+        
+        .box .text {
+            color: teal;
+        }
+
+        /* Demo 4: The !important keyword */
+        .important-demo {
+            color: pink;
+        }
+        
+        .important-demo {
+            color: navy !important;
+        }
+
+        /* Page styling */
+        .demo-box {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #333;
+        }
+
+        .demo-box h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .note {
+            background-color: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Understanding CSS Cascading</h1>
+    
+    <div class="note">
+        <strong>What is Cascading?</strong><br>
+        Sometimes multiple CSS rules try to style the same element. CSS uses "cascading" to decide 
+        which rule should actually apply. It's like a priority system!
+    </div>
+
+    <div class="demo-box">
+        <h3>Demo 1: Source Order (Last Rule Wins)</h3>
+        <p class="demo1">
+            In the CSS, I wrote two rules for this text - one says green, another says orange. 
+            The orange rule comes second, so it wins!
+        </p>
+        <p><em>When rules are equal, the last one in your CSS file wins.</em></p>
+    </div>
+
+    <div class="demo-box">
+        <h3>Demo 2: Specificity Hierarchy</h3>
+        
+        <p>I'm styled by tag name 'p' - this is the weakest selector (blue text).</p>
+        
+        <p class="highlight">I have a class '.highlight' - classes are stronger than tags (purple and bold).</p>
+        
+        <p id="special">I have an ID '#special' - IDs are the strongest (red and underlined).</p>
+        
+        <p class="highlight" id="special">
+            I have BOTH class and ID. The ID color (red) wins, but I still get bold from the class!
+        </p>
+        
+        <p><em>Power ranking: ID beats Class beats Tag</em></p>
+    </div>
+
+    <div class="demo-box">
+        <h3>Demo 3: Combining Selectors</h3>
+        <div class="box">
+            <p>I'm inside a .box div, styled by '.box p' (brown).</p>
+            <p class="text">
+                I have class .text AND I'm inside .box, styled by '.box .text' (teal). 
+                Two classes beat one class + tag!
+            </p>
+        </div>
+        <p><em>More specific selectors have higher priority.</em></p>
+    </div>
+
+    <div class="demo-box">
+        <h3>Demo 4: The !important Declaration</h3>
+        <p class="important-demo">
+            I have two rules - one says pink, another says navy with !important. 
+            The !important keyword forces navy to win, ignoring all normal rules!
+        </p>
+        <p><em>!important is like a trump card - use it carefully!</em></p>
+    </div>
+
+    <div class="demo-box">
+        <h3>Demo 5: Inline Styles (Highest Priority)</h3>
+        <p class="highlight" id="special" style="color: green; text-decoration: none;">
+            Even though this paragraph has class and ID selectors that say red and purple, 
+            the inline style="color: green" wins! Inline styles beat everything (except !important).
+        </p>
+        <p><em>Inline styles always win (unless !important is used).</em></p>
+    </div>
+
+    <div class="demo-box" style="background-color: #e8f4f8; border-left-color: #3498db;">
+        <h3>Summary: The Cascade Priority Order</h3>
+        <ol>
+            <li><strong>Inline styles</strong> - style="..." (Highest Priority)</li>
+            <li><strong>ID selectors</strong> - #id</li>
+            <li><strong>Classes, attributes, pseudo-classes</strong> - .class, [attribute], :hover</li>
+            <li><strong>Elements & pseudo-elements</strong> - div, p, ::before</li>
+            <li><strong>Universal selector</strong> - * (Lowest Priority)</li>
+        </ol>
+        <p><strong>Special case:</strong> !important breaks all these rules and takes top priority!</p>
+        <p><strong>Tie-breaker:</strong> When specificity is equal, the rule that comes LAST wins.</p>
+    </div>
+
+    <div class="note">
+        <strong>Remember:</strong> Cascading is like a waterfall - styles flow down, and more specific rules override general ones.
+    </div>
+</body>
+</html>
